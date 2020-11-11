@@ -1,3 +1,6 @@
 --
 hostname {{ item.hostname }}
+
+enable secret 0 {{ item.enable_secret }}
+
 snmp-server location {{ item.snmp_location }}
