@@ -16,5 +16,5 @@
   - name: Jinja Template
     template:
       src: jinja_testing.j2
-      dest: "/var/lib/awx/projects/_66__jinja_templating/{{ item.hostname }}.txt"
+      dest: "./{{ item.hostname }}.txt"
     loop: "{{ users.list }}"
