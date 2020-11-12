@@ -1,4 +1,4 @@
-s.no$hostname$enable_secret$snmp_location$username$password$aaa_new_model$clock_timezone$ip_domain_name$vtp_domain$vtp_mode_transparent$spanning_tree_mode 
+s.no$hostname$enable_secret$snmp_location$username$password$aaa_new_model$clock_timezone$ip_domain_name$vtp_domain$vtp_mode_transparent$spanning_tree_mode
 1$PershingPark-4507-MDF-1$Pr0curve$roselawn$admin$Pr0curve$yes$Central -6 0$killeenisd.org$UnionGrove$transparent$rapid
 2$PershingPark-9300-MDF-2$Pr0curve$hermosa$admin$Pr0curve$yes$Central -6 0$killeenisd.org$UnionGrove$transparent$mst
 3$PershingPark-4506-IDF1$Pr0curve$main$admin$Pr0curve$yes$Central -6 0$killeenisd.org$UnionGrove$transparent$pvst
