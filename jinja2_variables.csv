@@ -1,7 +1,7 @@
-s.no$hostname$enable_secret$snmp_location
-1$PershingPark-4507-MDF-1$Pr0curve$roselawn
-2$PershingPark-9300-MDF-2$Pr0curve$hermosa
-3$PershingPark-4506-IDF1$Pr0curve$main
-4$PershingPark-9300-IDF2$Pr0curve$main
-5$PershingPark-4506-IDF3-1$Pr0curve$main
-6$PershingPark-4506-IDF3-2$Pr0curve$main
+s.no$hostname$enable_secret$snmp_location$username$password
+1$PershingPark-4507-MDF-1$Pr0curve$roselawn$admin$Pr0curve
+2$PershingPark-9300-MDF-2$Pr0curve$hermosa$admin$Pr0curve
+3$PershingPark-4506-IDF1$Pr0curve$main$admin$Pr0curve
+4$PershingPark-9300-IDF2$Pr0curve$main$admin$Pr0curve
+5$PershingPark-4506-IDF3-1$Pr0curve$main$admin$Pr0curve
+6$PershingPark-4506-IDF3-2$Pr0curve$main$admin$Pr0curve
