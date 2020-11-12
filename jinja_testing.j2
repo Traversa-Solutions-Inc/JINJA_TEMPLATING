@@ -31,11 +31,10 @@ vtp mode {{ item.vtp_mode_transparent }}
 
 {% if item.spanning_tree_mode is defined and item.spanning_tree_mode == "rapid" %}
 spanning-tree mode rapid-pvst
-{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "mst" %} %}
+{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "mst" %}
 spanning-tree mode mst
-{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "pvst" %} %}
+{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "pvst" %}
 spanning-tree mode pvst
-{% else %}
 {% endif %}
 
 {% if item.spanning_tree_vlan is defined and item.spanning_tree_vlan_priority is defined and item.spanning_tree_vlan | length > 0 and item.spanning_tree_vlan_priority | length > 0 %}
