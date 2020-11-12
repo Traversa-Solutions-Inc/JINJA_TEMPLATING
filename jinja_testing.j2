@@ -20,7 +20,6 @@ clock timezone {{ item.clock_timezone }}
 ip domain-name {{ item.ip_domain_name }}
 {% else %}
 {% endif %}
-
 {% if item.vtp_domain is defined and item.vtp_domain | length > 0 %}
 vtp domain {{ item.vtp_domain }}
 {% else %}
@@ -29,7 +28,6 @@ vtp domain {{ item.vtp_domain }}
 vtp mode {{ item.vtp_mode_transparent }}
 {% else %}
 {% endif %}
-!
 {% if item.spanning_tree_mode is defined and item.spanning_tree_mode == "rapid" %}
 spanning-tree mode rapid-pvst
 {% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "mst" %}
@@ -42,7 +40,6 @@ spanning-tree mode pvst
 spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_vlan_priority }}
 {% else %}
 {% endif %}
-!
 {% if item.flow_exporter_name is defined and item.flow_exporter_name | length > 0 %}
 flow exporter {{ item.flow_exporter_name }}
 {% else %}
