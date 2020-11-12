@@ -20,6 +20,7 @@ clock timezone {{ item.clock_timezone }}
 ip domain-name {{ item.ip_domain_name }}
 {% else %}
 {% endif %}
+
 {% if item.vtp_domain is defined and item.vtp_domain | length > 0 %}
 vtp domain {{ item.vtp_domain }}
 {% else %}
@@ -37,10 +38,33 @@ spanning-tree mode mst
 spanning-tree mode pvst
 {% else %}
 {% endif %}
-
 {% if item.spanning_tree_vlan is defined and item.spanning_tree_vlan_priority is defined and item.spanning_tree_vlan | length > 0 and item.spanning_tree_vlan_priority | length > 0 %}
 spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_vlan_priority }}
 {% else %}
 {% endif %}
+
+#Netflow
+{% if item.flow_exporter is defined and item.flow_exporter | length > 0 %}
+flow flow_exporter {{ item.flow_exporter }}
+{% else %}
+{% endif %}
+{% if item.flow_dest is defined and item.flow_dest | length > 0 %}
+destination {{ item.flow_dest }}
+{% else %}
+{% endif %}
+{% if item.flow_src is defined and item.flow_src | length > 0 %}
+source {{ item.flow_src }}
+{% else %}
+{% endif %}
+{% if item.flow_protocol is defined and item.flow_port is defined and item.flow_protocol | length > 0 and item.flow_port | length > 0 %}
+transport {{ item.flow_protocol }} {{ item.flow_port }}
+{% else %}
+{% endif %}
+{% if item.flow_timeout is defined and item.flow_timeout | length > 0 %}
+option exporter-stats timeout {{ item.flow_timeout }}
+{% else %}
+{% endif %}
+
+
 
 snmp-server location {{ item.snmp_location }}
