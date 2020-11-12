@@ -43,27 +43,23 @@ spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_
 {% else %}
 {% endif %}
 !
-{% if item.flow_exporter is defined and item.flow_exporter | length > 0 %}
-flow flow_exporter {{ item.flow_exporter }}
+{% if item.flow_exporter_name is defined and item.flow_exporter_name | length > 0 %}
+flow exporter {{ item.flow_exporter_name }}
 {% else %}
 {% endif %}
-{% if item.flow_dest is defined and item.flow_dest | length > 0 %}
-destination {{ item.flow_dest }}
+{% if item.flow_exporter_dest is defined and item.flow_exporter_dest | length > 0 %}
+destination {{ item.flow_exporter_dest }}
 {% else %}
 {% endif %}
-{% if item.flow_src is defined and item.flow_src | length > 0 %}
-source {{ item.flow_src }}
+{% if item.flow_exporter_src is defined and item.flow_exporter_src | length > 0 %}
+source {{ item.flow_exporter_src }}
 {% else %}
 {% endif %}
-{% if item.flow_protocol is defined and item.flow_port is defined and item.flow_protocol | length > 0 and item.flow_port | length > 0 %}
-transport {{ item.flow_protocol }} {{ item.flow_port }}
+{% if item.flow_exporter_protocol is defined and item.flow_exporter_port is defined and item.flow_exporter_protocol | length > 0 and item.flow_exporter_port | length > 0 %}
+transport {{ item.flow_exporter_protocol }} {{ item.flow_exporter_port }}
 {% else %}
 {% endif %}
-{% if item.flow_timeout is defined and item.flow_timeout | length > 0 %}
-option exporter-stats timeout {{ item.flow_timeout }}
+{% if item.flow_exporter_timeout is defined and item.flow_exporter_timeout | length > 0 %}
+option exporter-stats timeout {{ item.flow_exporter_timeout }}
 {% else %}
 {% endif %}
-
-
-
-snmp-server location {{ item.snmp_location }}
