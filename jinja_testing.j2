@@ -8,4 +8,8 @@ enable secret 0 {{ item.enable_secret }}
 username {{ item.username }} privilege 15 secret 0 {{ item.password }}
 {% else %}
 {% endif %}
+{% if item.aaa_new_model is defined and item.aaa_new_model == "yes"  %}
+aaa new-model
+{% else %}
+{% endif %}
 snmp-server location {{ item.snmp_location }}
