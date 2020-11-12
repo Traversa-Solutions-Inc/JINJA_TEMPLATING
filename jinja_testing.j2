@@ -63,3 +63,13 @@ transport {{ item.flow_exporter_protocol }} {{ item.flow_exporter_port }}
 option exporter-stats timeout {{ item.flow_exporter_timeout }}
 {% else %}
 {% endif %}
+{% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
+ip http server
+{% else %}
+no ip http server
+{% endif %}
+{% if item.ip_http_secure_server is defined and item.ip_http_secure_server == "yes" %}
+ip_http_secure_server
+{% else %}
+no ip_http_secure_server
+{% endif %}
