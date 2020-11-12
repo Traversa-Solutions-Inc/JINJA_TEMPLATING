@@ -73,3 +73,8 @@ ip_http_secure_server
 {% else %}
 no ip_http_secure_server
 {% endif %}
+{% if item.ip_pim_rp_address is defined and item.ip_pim_rp_address | length > 0 %}
+ip pim rp-address {{ ip_pim_rp_address }}
+{% else %}
+{% endif %}
+
