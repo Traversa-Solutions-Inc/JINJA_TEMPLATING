@@ -35,6 +35,7 @@ spanning-tree mode rapid-pvst
 spanning-tree mode mst
 {% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "pvst" %}
 spanning-tree mode pvst
+{% else %}
 {% endif %}
 
 {% if item.spanning_tree_vlan is defined and item.spanning_tree_vlan_priority is defined and item.spanning_tree_vlan | length > 0 and item.spanning_tree_vlan_priority | length > 0 %}
