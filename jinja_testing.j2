@@ -29,7 +29,7 @@ vtp domain {{ item.vtp_domain }}
 vtp mode {{ item.vtp_mode_transparent }}
 {% else %}
 {% endif %}
-
+!
 {% if item.spanning_tree_mode is defined and item.spanning_tree_mode == "rapid" %}
 spanning-tree mode rapid-pvst
 {% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "mst" %}
@@ -42,8 +42,7 @@ spanning-tree mode pvst
 spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_vlan_priority }}
 {% else %}
 {% endif %}
-
-#Netflow
+!
 {% if item.flow_exporter is defined and item.flow_exporter | length > 0 %}
 flow flow_exporter {{ item.flow_exporter }}
 {% else %}
