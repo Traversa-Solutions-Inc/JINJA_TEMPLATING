@@ -5,7 +5,7 @@
     community.general.read_csv:
       path: jinja2_variables.csv
       delimiter: $
-    register: users
+    register: jinja_csv
     delegate_to: localhost
 
 #  - name: Creating Loop
@@ -17,4 +17,4 @@
     template:
       src: jinja_testing.j2
       dest: "/var/lib/awx/projects/_66__jinja_templating/{{ item.hostname }}.txt"
-    loop: "{{ users.list }}"
+    loop: "{{ jinja_csv.list }}"
