@@ -39,5 +39,4 @@ spanning-tree mode pvst
 spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_vlan_priority }}
 {% else %}
 {% endif %}
-
 snmp-server location {{ item.snmp_location }}
