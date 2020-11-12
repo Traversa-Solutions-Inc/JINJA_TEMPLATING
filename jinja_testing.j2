@@ -20,4 +20,12 @@ clock timezone {{ item.clock_timezone }}
 ip domain-name {{ item.ip_domain_name }}
 {% else %}
 {% endif %}
+{% if item.vtp_domain is defined and item.vtp_domain | length > 0 %}
+vtp domain {{ item.vtp_domain }}
+{% else %}
+{% endif %}
+{% if item.vtp_mode_transparent is defined and item.vtp_mode_transparent | length > 0 %}
+vtp mode {{ item.vtp_mode_transparent }}
+{% else %}
+{% endif %}
 snmp-server location {{ item.snmp_location }}
