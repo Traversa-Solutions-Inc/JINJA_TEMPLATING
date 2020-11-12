@@ -1,7 +1,7 @@
 --
 hostname {{ item.hostname }}
-{% if item.enable_secret == ''  %}
-{% else %}
+{% if item.enable_secret is defined and item.enable_secret | length > 0  %}
 enable secret 0 {{ item.enable_secret }}
+{% else %}
 {% endif %}
 snmp-server location {{ item.snmp_location }}
