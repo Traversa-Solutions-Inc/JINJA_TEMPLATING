@@ -16,4 +16,8 @@ aaa new-model
 clock timezone {{ item.clock_timezone }}
 {% else %}
 {% endif %}
+{% if item.ip_domain_name is defined and item.ip_domain_name | length > 0 %}
+ip domain-name {{ item.ip_domain_name }}
+{% else %}
+{% endif %}
 snmp-server location {{ item.snmp_location }}
