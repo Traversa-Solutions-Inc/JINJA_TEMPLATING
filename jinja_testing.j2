@@ -1,5 +1,5 @@
 --
-hostname {{ item.hostname -}}
+hostname {{- item.hostname -}}
 
 {% if item.enable_secret == ''  %}
 {% else %}
