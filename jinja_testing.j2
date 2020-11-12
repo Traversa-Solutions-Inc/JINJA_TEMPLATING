@@ -12,4 +12,8 @@ username {{ item.username }} privilege 15 secret 0 {{ item.password }}
 aaa new-model
 {% else %}
 {% endif %}
+{% if item.clock_timezone is defined and item.clock_timezone | length > 0 %}
+clock timezone {{ item.clock_timezone }}
+{% else %}
+{% endif %}
 snmp-server location {{ item.snmp_location }}
