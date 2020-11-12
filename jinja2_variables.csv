@@ -1,7 +1,7 @@
-s.no	hostname	flow_exporter_name	flow_exporter_dest	flow_exporter_src	flow_exporter_protocol	flow_exporter_port	flow_exporter_timeout
-1	PershingPark-4507-MDF-1	PrimeNFExp	10.200.3.254	Vlan250	udp	9991	60
-2	PershingPark-9300-MDF-2	PrimeNFExp	10.200.3.254	Vlan2500	udp	9991	60
-3	PershingPark-4506-IDF1	PrimeNFExp	10.200.3.254	Vlan2500	udp	9991	60
-4	PershingPark-9300-IDF2	PrimeNFExp	10.200.3.254	Vlan2500	udp	9991	60
-5	PershingPark-4506-IDF3-1	PrimeNFExp	10.200.3.254	Vlan2500	udp	9991	60
-6	PershingPark-4506-IDF3-2	PrimeNFExp	10.200.3.254	Vlan2500	udp	9991	60
+s.no$hostname$flow_exporter_name$flow_exporter_dest$flow_exporter_src$flow_exporter_protocol$flow_exporter_port$flow_exporter_timeout
+1$PershingPark-4507-MDF-1$PrimeNFExp$10.200.3.254$Vlan250$udp$9991$60
+2$PershingPark-9300-MDF-2$PrimeNFExp$10.200.3.254$Vlan2500$udp$9991$60
+3$PershingPark-4506-IDF1$PrimeNFExp$10.200.3.254$Vlan2500$udp$9991$60
+4$PershingPark-9300-IDF2$PrimeNFExp$10.200.3.254$Vlan2500$udp$9991$60
+5$PershingPark-4506-IDF3-1$PrimeNFExp$10.200.3.254$Vlan2500$udp$9991$60
+6$PershingPark-4506-IDF3-2$PrimeNFExp$10.200.3.254$Vlan2500$udp$9991$60
