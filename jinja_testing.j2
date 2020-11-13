@@ -76,7 +76,6 @@ record {{ item.flow_monitor_record }}
 {% else %}
 {% endif %}
 {% if item.key_chain_name is defined and item.key_chain_name | length > 0 %}
-configure terminal
 key chain {{ item.key_chain_name }}
 {% else %}
 {% endif %}
@@ -86,7 +85,6 @@ key {{ item.key_chain_id }}
 {% endif %}
 {% if item.key_chain_password is defined and item.key_chain_password | length > 0 %}
 key-string {{ item.key_chain_password }}
-end
-end
+exit
 {% else %}
 {% endif %}
