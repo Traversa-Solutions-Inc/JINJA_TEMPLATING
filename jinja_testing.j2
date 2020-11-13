@@ -100,7 +100,9 @@ exit
 {% if item.l2_vlans is defined %}
 {% set final_l2_vlans = item.l2_vlans.split(',') %}
 {% set final_l2_vlans_name = item.l2_vlans_name.split(',') %}
-{% for each_l2_vlans, each_l2_vlans_name in final_l2_vlans,final_l2_vlans_name %}
+{% for each_l2_vlans, each_l2_vlans_name in ['final_l2_vlans','final_l2_vlans_name'] %}
 vlan {{ each_l2_vlans }}
 name {{ each_l2_vlans_name }}
 {% endfor %}
+{% else %}
+{% endif %}
