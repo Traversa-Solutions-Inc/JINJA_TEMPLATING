@@ -104,13 +104,14 @@ exit-af-topology
 {% endif %}
 {% for eigrp_network in item.eigrp_networks %}
 network {{ eigrp_network }}
+{% endfor %}
 {% if item.eigrp_router_id is defined and item.eigrp_router_id | length > 0 %}
 eigrp router-id {{ item.eigrp_router_id }}
 eigrp stub connected summary
 exit-address-family
 exit
 {% else %}
-{% endfor %}
+{% endif %}
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
 ip http server
 {% elif item.ip_http_server is defined and item.ip_http_server == "no" %}
