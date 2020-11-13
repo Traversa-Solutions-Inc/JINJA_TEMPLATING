@@ -104,7 +104,7 @@ exit
 {% set final_l2_vlans = l2_vlans[loop.index-1] %}
 {% set final_l2_vlans_name = l2_vlans_name[loop.index-1] %}
 vlan {{ final_l2_vlans }}
-name {{ final_l2_vlans_name }}
+name {{ final_l2_vlans_name | default(final_l2_vlans) }}
 {% endfor %}
 {% else %}
 {% endif %}
