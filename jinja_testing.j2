@@ -78,16 +78,22 @@ record {{ item.flow_monitor_record }}
 {% endif %}
 {% if item.eigrp_process_id is defined and item.eigrp_process_id | length > 0 %}
 router eigrp {{ item.eigrp_process_id }}
+!
 {% else %}
 {% endif %}
-{% if item.eigrp_autonomous_id is defined and item.eigrp_autonomous_id | length > 0 %}
-address-family ipv4 unicast autonomous-system 100 {{ item.eigrp_autonomous_id }}
+{% if item.eigrp_ipv4_autonomous_id is defined and item.eigrp_ipv4_autonomous_id | length > 0 %}
+address-family ipv4 unicast autonomous-system {{ item.eigrp_autonomous_id }}
+{% else %}
+{% endif %}
+{% if item.eigrp_authentication_mode is defined and item.eigrp_authentication_mode == "md5" %}
 af-interface default
 authentication mode md5
+{% elif item.eigrp_authentication_mode is defined and item.eigrp_authentication_mode != "md5" %}
+af-interface default
+authentication mode hmac-sha-256 0 {{ item.eigrp_authentication_mode }}
 authentication key-chain eigrp-key
 passive-interface
 exit-af-interface
-{% else %}
 {% endif %}
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
 ip http server
