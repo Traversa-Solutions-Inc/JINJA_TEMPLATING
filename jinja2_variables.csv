@@ -1,7 +1,7 @@
-s.no$hostname$l2_vlans$l2_vlans_name$l2_vlans_mtu
-1$PershingPark-4507-MDF-1$1,2,3$math,math,science$100,200,300
-2$PershingPark-9300-MDF-2$10,20$science,math$100,200,300
-3$PershingPark-4506-IDF1$10,20$PT,math$100,200,300
-4$PershingPark-9300-IDF2$10,20$testing,math$100,200,300
-5$PershingPark-4506-IDF3-1$10,20$lab,math$100,200,300
-6$PershingPark-4506-IDF3-2$10,20$lab,math$100,200,300
+s.no$hostname$l2_vlans$l2_vlans_name
+1$PershingPark-4507-MDF-1$1,2,3$math,math,science
+2$PershingPark-9300-MDF-2$10,20$science,math
+3$PershingPark-4506-IDF1$10,20$PT,math
+4$PershingPark-9300-IDF2$10,20$testing,math
+5$PershingPark-4506-IDF3-1$10,20$lab,math
+6$PershingPark-4506-IDF3-2$10,20$lab
