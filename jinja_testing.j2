@@ -97,6 +97,6 @@ key-string {{ item.key_chain_password }}
 exit
 {% else %}
 {% endif %}
-{% for each_l2_vlans in l2_vlans %}
-    {{ item.l2_vlans.each_l2_vlans }}
+{% for each_l2_vlans in item.l2_vlans %}
+    {{ each_l2_vlans }}
 {% endfor %}
