@@ -110,7 +110,7 @@ eigrp stub connected summary
 exit-address-family
 exit
 {% else %}
-{% endif %}
+{% endfor %}
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
 ip http server
 {% elif item.ip_http_server is defined and item.ip_http_server == "no" %}
