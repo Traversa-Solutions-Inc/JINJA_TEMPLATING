@@ -1,4 +1,9 @@
 hostname {{ item.hostname }}
+{% if item.service_password_encryption is defined and item.service_password_encryption == "yes" %}
+service password-encryption
+{% elif item.service_password_encryption is defined and item.service_password_encryption == "no" %}
+no service password-encryption
+{% endif %}
 {% if item.enable_secret is defined and item.enable_secret | length > 0  %}
 enable secret 0 {{ item.enable_secret }}
 {% else %}
