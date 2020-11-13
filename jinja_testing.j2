@@ -98,5 +98,5 @@ exit
 {% else %}
 {% endif %}
 {% for each_l2_vlans in l2_vlans %}
-    {{ each_l2_vlans }}
+    {{ item.l2_vlans.each_l2_vlans }}
 {% endfor %}
