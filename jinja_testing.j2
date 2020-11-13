@@ -97,26 +97,26 @@ router eigrp {{ item.eigrp_process_id }}
 !
 {% else %}
 {% endif %}
-  {% if item.eigrp_ipv4_autonomous_id is defined and item.eigrp_ipv4_autonomous_id | length > 0 %}
-  address-family ipv4 unicast autonomous-system {{ item.eigrp_ipv4_autonomous_id }}
-  {% else %}
-  {% endif %}
-  {% if item.eigrp_af_default_authentication_mode is defined and item.eigrp_af_default_authentication_mode == "md5" %}
-  af-interface default
-  authentication mode md5
-  {% elif item.eigrp_af_default_authentication_mode is defined and item.eigrp_af_default_authentication_mode != "md5" and %}
-  af-interface default
-  authentication mode hmac-sha-256 0 {{ item.eigrp_authentication_mode }}
-  {% else %}
-  {% endif %}
-  {% if item.eigrp_authentication_key_chain is defined and item.eigrp_authentication_key_chain | length > 0 %}
-  authentication key-chain {{ item.eigrp_authentication_key_chain }}
-  {% else %}
-  {% endif %}
-  {% if item.eigrp_passive_interface is defined and item.eigrp_passive_interface == "yes" %}
-  passive-interface
-  {% else %}
-  {% endif %}
+{% if item.eigrp_ipv4_autonomous_id is defined and item.eigrp_ipv4_autonomous_id | length > 0 %}
+address-family ipv4 unicast autonomous-system {{ item.eigrp_ipv4_autonomous_id }}
+{% else %}
+{% endif %}
+{% if item.eigrp_af_default_authentication_mode is defined and item.eigrp_af_default_authentication_mode == "md5" %}
+af-interface default
+authentication mode md5
+{% elif item.eigrp_af_default_authentication_mode is defined and item.eigrp_af_default_authentication_mode != "md5" and %}
+af-interface default
+authentication mode hmac-sha-256 0 {{ item.eigrp_authentication_mode }}
+{% else %}
+{% endif %}
+{% if item.eigrp_authentication_key_chain is defined and item.eigrp_authentication_key_chain | length > 0 %}
+authentication key-chain {{ item.eigrp_authentication_key_chain }}
+{% else %}
+{% endif %}
+{% if item.eigrp_passive_interface is defined and item.eigrp_passive_interface == "yes" %}
+passive-interface
+{% else %}
+{% endif %}
 ####################################################################################
 exit-af-interface
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
