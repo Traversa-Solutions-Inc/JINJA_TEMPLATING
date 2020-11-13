@@ -1,7 +1,7 @@
-s.no$hostname$eigrp_process_id$eigrp_ipv4_autonomous_id
-1$PershingPark-4507-MDF-1$100$100
-2$PershingPark-9300-MDF-2$100$100
-3$PershingPark-4506-IDF1$100$100
-4$PershingPark-9300-IDF2$100$100
-5$PershingPark-4506-IDF3-1$100$100
-6$PershingPark-4506-IDF3-2$100$100
+s.no$hostname$eigrp_process_id$eigrp_ipv4_autonomous_id$eigrp_authentication_mode
+1$PershingPark-4507-MDF-1$100$100$md5
+2$PershingPark-9300-MDF-2$100$100$Pr0curve
+3$PershingPark-4506-IDF1$100$100$Pr0curve
+4$PershingPark-9300-IDF2$100$100$Pr0curve
+5$PershingPark-4506-IDF3-1$100$100$Pr0curve
+6$PershingPark-4506-IDF3-2$100$100$Pr0curve
