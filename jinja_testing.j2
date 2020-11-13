@@ -82,34 +82,11 @@ router eigrp {{ item.eigrp_process_id }}
 {% endif %}
 {% if item.eigrp_autonomous_id is defined and item.eigrp_autonomous_id | length > 0 %}
 address-family ipv4 unicast autonomous-system 100 {{ item.eigrp_autonomous_id }}
-{% else %}
-{% endif %}
 af-interface default
 authentication mode md5
 authentication key-chain eigrp-key
 passive-interface
 exit-af-interface
-{% if item.eigrp_af_interface is defined and item.eigrp_af_interface | length > 0 %}
-af-interface {{ item.eigrp_af_interface }}
-{% else %}
-{% endif %}
-{% if item.eigrp_summary_address is defined and item.eigrp_summary_address | length > 0 %}
-summary-address {{ item.eigrp_summary_address }}
-no passive-interface
-exit-af-interface
-!
-topology base
-exit-af-topology
-{% else %}
-{% endif %}
-{% for eigrp_network in item.eigrp_networks %}
-network {{ eigrp_network }}
-{% endfor %}
-{% if item.eigrp_router_id is defined and item.eigrp_router_id | length > 0 %}
-eigrp router-id {{ item.eigrp_router_id }}
-eigrp stub connected summary
-exit-address-family
-exit
 {% else %}
 {% endif %}
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
