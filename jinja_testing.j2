@@ -76,7 +76,6 @@ record {{ item.flow_monitor_record }}
 record {{ item.flow_monitor_record }}
 {% else %}
 {% endif %}
-
 {% if item.eigrp_process_id is defined and item.eigrp_process_id | length > 0 %}
 router eigrp {{ item.eigrp_process_id }}
 {% else %}
@@ -96,24 +95,22 @@ af-interface {{ item.eigrp_af_interface }}
 {% endif %}
 {% if item.eigrp_summary_address is defined and item.eigrp_summary_address | length > 0 %}
 summary-address {{ item.eigrp_summary_address }}
-{% else %}
-{% endif %}
 no passive-interface
 exit-af-interface
 !
 topology base
 exit-af-topology
+{% else %}
+{% endif %}
 {% for eigrp_network in item.eigrp_networks %}
 network {{ eigrp_network }}
 {% if item.eigrp_router_id is defined and item.eigrp_router_id | length > 0 %}
 eigrp router-id {{ item.eigrp_router_id }}
-{% else %}
-{% endif %}
 eigrp stub connected summary
 exit-address-family
 exit
-
-
+{% else %}
+{% endif %}
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
 ip http server
 {% elif item.ip_http_server is defined and item.ip_http_server == "no" %}
