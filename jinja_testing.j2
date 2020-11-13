@@ -86,7 +86,16 @@ key {{ item.key_chain_id }}
 {% endif %}
 {% if item.key_chain_password is defined and item.key_chain_password | length > 0 %}
 key-string {{ item.key_chain_password }}
-exit
-exit
+end
+end
 {% else %}
 {% endif %}
+{# if item.key_chain_password is defined %}
+end
+end
+{% else %}
+{% endif %}
+FUTURE PROOF TO ADD END'S AFTER TOTAL NUMBER OF COMMANDS
+#}
+
+
