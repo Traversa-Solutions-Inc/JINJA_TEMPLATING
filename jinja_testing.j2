@@ -79,14 +79,16 @@ record {{ item.flow_monitor_record }}
 {% if item.key_chain_name is defined and item.key_chain_name | length > 0 %}
 configure terminal
 key chain {{ item.key_chain_name }}
-     {% if item.key_chain_id is defined and item.key_chain_id | length > 0 %}
-     key {{ item.key_chain_id }}
-          {% if item.key_chain_password is defined and item.key_chain_password | length > 0 %}
-          key-string {{ item.key_chain_password }}
-          exit
-          exit
-          {% endif %}
-     {% endif %}
+{% else %}
+{% endif %}
+{% if item.key_chain_id is defined and item.key_chain_id | length > 0 %}
+key {{ item.key_chain_id }}
+{% else %}
+{% endif %}
+{% if item.key_chain_password is defined and item.key_chain_password | length > 0 %}
+key-string {{ item.key_chain_password }}
+exit
+exit
 {% else %}
 {% endif %}
 ####################################################################################
