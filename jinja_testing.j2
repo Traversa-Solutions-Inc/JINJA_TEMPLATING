@@ -82,7 +82,7 @@ router eigrp {{ item.eigrp_process_id }}
 {% else %}
 {% endif %}
 {% if item.eigrp_ipv4_autonomous_id is defined and item.eigrp_ipv4_autonomous_id | length > 0 %}
-address-family ipv4 unicast autonomous-system {{ item.eigrp_autonomous_id }}
+address-family ipv4 unicast autonomous-system {{ item.eigrp_ipv4_autonomous_id }}
 {% else %}
 {% endif %}
 {% if item.eigrp_authentication_mode is defined and item.eigrp_authentication_mode == "md5" %}
