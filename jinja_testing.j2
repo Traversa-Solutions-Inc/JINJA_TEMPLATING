@@ -104,7 +104,7 @@ exit-af-interface
 topology base
 exit-af-topology
 {% for eigrp_network in item.eigrp_networks %}
-network {{ eigrp_network}}
+network {{ eigrp_network }}
 {% if item.eigrp_router_id is defined and item.eigrp_router_id | length > 0 %}
 eigrp router-id {{ item.eigrp_router_id }}
 {% else %}
