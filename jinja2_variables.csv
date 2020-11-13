@@ -1,7 +1,7 @@
 s.no$hostname$l2_vlans$l2_vlans_name
-1$PershingPark-4507-MDF-1$1,2,3$math,math,science
-2$PershingPark-9300-MDF-2$10,20$science,math
-3$PershingPark-4506-IDF1$10,20$PT,math
-4$PershingPark-9300-IDF2$10,20$testing,math
-5$PershingPark-4506-IDF3-1$10,20$lab,math
-6$PershingPark-4506-IDF3-2$10,20$lab
+1$PershingPark-4507-MDF-1$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
+2$PershingPark-9300-MDF-2$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
+3$PershingPark-4506-IDF1$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
+4$PershingPark-9300-IDF2$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
+5$PershingPark-4506-IDF3-1$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
+6$PershingPark-4506-IDF3-2$1,2,9,10,20,30,31,54,244,245,247,249,250,251$MDF-A Data,Voice,IDF1-A Data,IDF2-A Data,IDF3-A Data,IDF3-B Data,Wireless,Fac-Mon-Systems,AV,Intercom,CCTV,Management VLAN,UPS
