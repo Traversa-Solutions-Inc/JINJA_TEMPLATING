@@ -116,11 +116,13 @@ exit
 
 {% if item.ip_http_server is defined and item.ip_http_server == "yes" %}
 ip http server
-{% else %}
+{% elif item.ip_http_server is defined and item.ip_http_server == "no" %}
+no ip http server
 {% endif %}
 {% if item.ip_http_secure_server is defined and item.ip_http_secure_server == "yes" %}
-ip_http_secure_server
-{% else %}
+ip http secure server
+{% elif item.ip_http_secure_server is defined and item.ip_http_secure_server == "no" %}
+no ip http secure server
 {% endif %}
 {% if item.ip_pim_rp_address is defined and item.ip_pim_rp_address | length > 0 %}
 ip pim rp-address {{ item.ip_pim_rp_address }}
