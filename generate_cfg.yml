@@ -3,9 +3,9 @@
   tasks:
   - name: Path to CSV, delimeter $, register to object users, localhost
     community.general.read_csv:
-      path: jinja2_variables.csv
+      path: jinja2_hostname.csv
       delimiter: $
-    register: jinja_csv
+    register: jinja_csr
     delegate_to: localhost
 
 #  - name: Creating Loop
@@ -15,6 +15,6 @@
 
   - name: Jinja Template
     template:
-      src: jinja_testing.j2
+      src: jinja_hostname.j2
       dest: "/var/lib/awx/projects/_66__jinja_templating/config/{{ item.hostname }}.txt"
-    loop: "{{ jinja_csv.list }}"
+    loop: "{{ jinja_csr.list }}"

@@ -1,0 +1,6 @@
+---
+- host: all
+  tasks:
+    - name: config soufce from jinja2
+      ios_config:
+        src: "./config/{{inventory_hostname}}.txt"
