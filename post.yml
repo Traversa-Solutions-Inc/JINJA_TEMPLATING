@@ -1,5 +1,5 @@
 ---
-- host: all
+- hosts: all
   tasks:
     - name: config soufce from jinja2
       ios_config:
