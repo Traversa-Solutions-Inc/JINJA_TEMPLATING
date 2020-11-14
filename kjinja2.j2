@@ -1,0 +1,111 @@
+hostname {{ item.hostname }}
+{% if item.service_password_encryption is defined and item.service_password_encryption == "yes" %}
+service password-encryption
+{% elif item.service_password_encryption is defined and item.service_password_encryption == "no" %}
+no service password-encryption
+{% endif %}
+{% if item.enable_secret is defined and item.enable_secret | length > 0  %}
+enable secret 0 {{ item.enable_secret }}
+{% else %}
+{% endif %}
+{% if item.username is defined and item.password is defined and item.username | length > 0 and item.password | length > 0  %}
+username {{ item.username }} privilege 15 secret 0 {{ item.password }}
+{% else %}
+{% endif %}
+{% if item.aaa_new_model is defined and item.aaa_new_model == "yes"  %}
+aaa new-model
+{% else %}
+{% endif %}
+{% if item.clock_timezone is defined and item.clock_timezone | length > 0 %}
+clock timezone {{ item.clock_timezone }}
+{% else %}
+{% endif %}
+{% if item.clock_summer_time is defined and item.clock_summer_time | length > 0 %}
+clock summer-time {{ item.clock_summer_time }} recurring
+{% else %}
+{% endif %}
+{% if item.ip_domain_name is defined and item.ip_domain_name | length > 0 %}
+ip domain-name {{ item.ip_domain_name }}
+{% else %}
+{% endif %}
+{% if item.vtp_domain is defined and item.vtp_domain | length > 0 %}
+vtp domain {{ item.vtp_domain }}
+{% else %}
+{% endif %}
+{% if item.vtp_mode_transparent is defined and item.vtp_mode_transparent | length > 0 %}
+vtp mode {{ item.vtp_mode_transparent }}
+{% else %}
+{% endif %}
+{% if item.spanning_tree_mode is defined and item.spanning_tree_mode == "rapid" %}
+spanning-tree mode rapid-pvst
+{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "mst" %}
+spanning-tree mode mst
+{% elif item.spanning_tree_mode is defined and item.spanning_tree_mode == "pvst" %}
+spanning-tree mode pvst
+{% else %}
+{% endif %}
+{% if item.spanning_tree_vlan is defined and item.spanning_tree_vlan_priority is defined and item.spanning_tree_vlan | length > 0 and item.spanning_tree_vlan_priority | length > 0 %}
+spanning-tree vlan {{ item.spanning_tree_vlan }} priority {{ item.spanning_tree_vlan_priority }}
+{% else %}
+{% endif %}
+{% if item.flow_exporter_name is defined and item.flow_exporter_name | length > 0 %}
+flow exporter {{ item.flow_exporter_name }}
+{% else %}
+{% endif %}
+{% if item.flow_exporter_dest is defined and item.flow_exporter_dest | length > 0 %}
+destination {{ item.flow_exporter_dest }}
+{% else %}
+{% endif %}
+{% if item.flow_exporter_src is defined and item.flow_exporter_src | length > 0 %}
+source {{ item.flow_exporter_src }}
+{% else %}
+{% endif %}
+{% if item.flow_exporter_protocol is defined and item.flow_exporter_port is defined and item.flow_exporter_protocol | length > 0 and item.flow_exporter_port | length > 0 %}
+transport {{ item.flow_exporter_protocol }} {{ item.flow_exporter_port }}
+{% else %}
+{% endif %}
+{% if item.flow_exporter_timeout is defined and item.flow_exporter_timeout | length > 0 %}
+option exporter-stats timeout {{ item.flow_exporter_timeout }}
+{% else %}
+{% endif %}
+{% if item.flow_monitor_name is defined and item.flow_monitor_name | length > 0 %}
+flow monitor {{ item.flow_monitor_name }}
+{% else %}
+{% endif %}
+{% if item.flow_monitor_exporter is defined and item.flow_monitor_exporter | length > 0 %}
+exporter {{ item.flow_monitor_exporter }}
+{% else %}
+{% endif %}
+{% if item.flow_monitor_record is defined and item.flow_monitor_record | length > 0 %}
+record {{ item.flow_monitor_record }}
+{% else %}
+{% endif %}
+{% if item.flow_monitor_record is defined and item.flow_monitor_record | length > 0 %}
+record {{ item.flow_monitor_record }}
+{% else %}
+{% endif %}
+{% if item.key_chain_name is defined and item.key_chain_name | length > 0 %}
+key chain {{ item.key_chain_name }}
+{% else %}
+{% endif %}
+{% if item.key_chain_id is defined and item.key_chain_id | length > 0 %}
+key {{ item.key_chain_id }}
+{% else %}
+{% endif %}
+{% if item.key_chain_password is defined and item.key_chain_password | length > 0 %}
+key-string {{ item.key_chain_password }}
+exit
+{% else %}
+{% endif %}
+{% if item.l2_vlans is defined %}
+{% set l2_vlans = item.l2_vlans.split(',') %}
+{% set l2_vlans_name = item.l2_vlans_name.split(',') %}
+{% for each_l2_vlans in l2_vlans %}
+{% set final_l2_vlans = l2_vlans[loop.index-1] %}
+{% set final_l2_vlans_name = l2_vlans_name[loop.index-1] %}
+vlan {{ final_l2_vlans }}
+name {{ final_l2_vlans_name | default("VLAN"+final_l2_vlans) }}
+{# THERE IS MTU SETTING AT THIS HIERARCHY, THIS IS A PLACEHOLDER. #}
+{% endfor %}
+{% else %}
+{% endif %}
