@@ -15,6 +15,6 @@
 
   - name: Jinja Template
     template:
-      src: jinja_hostname.j2
+      src: prav_jinja2.j2
       dest: "/var/lib/awx/projects/_66__jinja_templating/config/{{ item.hostname }}.txt"
     loop: "{{ jinja_csr.list }}"
